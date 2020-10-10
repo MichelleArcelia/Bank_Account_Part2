@@ -8,7 +8,7 @@
 
 package com.meritamerica.assignment2;
 
-import com.meritamerica.assignment1.AccountHolder;
+//import com.meritamerica.assignment1.AccountHolder;
 
 public class MeritAmericaBankApp {
 	
@@ -32,7 +32,7 @@ public class MeritAmericaBankApp {
 	
 	System.out.println(Holder1.toString());	
 	
-	Holder1.updatedSavings.withdraw(20);
+	//Holder1.updatedSavings.withdraw(20);
 	
 	System.out.println("NEW Savings Information: " + Holder1.updatedSavings.toString());
 	

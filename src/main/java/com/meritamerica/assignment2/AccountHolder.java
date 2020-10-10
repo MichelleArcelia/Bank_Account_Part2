@@ -10,8 +10,8 @@ package com.meritamerica.assignment2;
 
 import java.util.Arrays;
 
-import com.meritamerica.assignment1.CheckingAccount;
-import com.meritamerica.assignment1.SavingsAccount;
+//import com.meritamerica.assignment1.CheckingAccount;
+//import com.meritamerica.assignment1.SavingsAccount;
 
 
 public class AccountHolder extends MeritAmericaBankApp {
