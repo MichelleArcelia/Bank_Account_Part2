@@ -1,8 +1,8 @@
 /* Week 3 Partner Pair Assignment #2
  * Bank Account Part 2  
  * @author Michelle Neptune
- * @date October 3, 2020
- * PART 1
+ * @date October 10, 2020
+ * PART 2
  */
 
 
@@ -10,15 +10,18 @@ package com.meritamerica.assignment2;
 
 import java.util.Arrays;
 
+import com.meritamerica.assignment1.CheckingAccount;
+import com.meritamerica.assignment1.SavingsAccount;
+
 
 public class AccountHolder extends MeritAmericaBankApp {
 	
 // ***************** VARIABLES *****************
 	
-	String firstName;
-	String middleName;
-	String lastName;
-	String ssn;
+	private String firstName;
+	private String middleName;
+	private String lastName;
+	private String ssn;
 	double checkingAccountOpeningBalance;
 	double savingsAccountOpeningBalance;
 	
@@ -26,29 +29,44 @@ public class AccountHolder extends MeritAmericaBankApp {
 	SavingsAccount updatedSavings;
 	
 	
+	private int checkingAccountNumber = 0;
+	private int savingsAccountNumber = 0;
+	private int cdAccountNumber = 0;
+	
+	
 	double openingBalance = 100;
 	private static double interestRate = 0.01;
+	
+	
+	
+	
+	this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
+	this.savingsAccountOpeningBalance = savingsAccountOpeningBalance; 
+	
+	updatedChecking = new CheckingAccount(checkingAccountOpeningBalance);
+	
+	updatedSavings = new SavingsAccount(savingsAccountOpeningBalance);
+	
+	
+	
+	
+	
 
 // ***************** ACCOUNT HOLDER CONSTRUCTOR *****************
 	
-	public AccountHolder(String firstName, String middleName, String lastName, String ssn, double checkingAccountOpeningBalance, double savingsAccountOpeningBalance) {
+	public AccountHolder(String firstName, String middleName, String lastName, String ssn) {
 		
 		this.firstName = firstName;
 		this.middleName = middleName; 
 		this.lastName = lastName; 
 		this.ssn = ssn;
-		this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
-		this.savingsAccountOpeningBalance = savingsAccountOpeningBalance; 
-		
-		updatedChecking = new CheckingAccount(checkingAccountOpeningBalance);
-		
-		updatedSavings = new SavingsAccount(savingsAccountOpeningBalance);
-		
-	} 
 
+	} 
+	
 // ***************** GET & SET METHODS *****************
 	
-// ***** FIRST NAME ***** 
+	
+// ===== FIRST NAME ===== 
 
 	public String getFirstName() {
 		return firstName;
@@ -58,7 +76,7 @@ public class AccountHolder extends MeritAmericaBankApp {
 		this.firstName = firstName;
 	}
 
-// ***** MIDDLE NAME ***** 
+// ===== MIDDLE NAME ===== 
 
 	public String getMiddleName() {
 		return middleName;
@@ -68,7 +86,7 @@ public class AccountHolder extends MeritAmericaBankApp {
 		this.middleName = middleName;
 	}
 
-// ***** LAST NAME ***** 
+// ===== LAST NAME ===== 
 
 	public String getLastName() {
 		return lastName;
@@ -78,7 +96,7 @@ public class AccountHolder extends MeritAmericaBankApp {
 		this.lastName = lastName;
 	}
 
-// ***** SSN ***** 
+// ===== SSN ===== 
 
 	public String getSSN() {
 		return ssn;
@@ -90,21 +108,149 @@ public class AccountHolder extends MeritAmericaBankApp {
 
 	
 	
-//***** CHECKING ACCOUNT ***** 
+// ===== CHECKING ACCOUNT METHODS===== 
 	
-	CheckingAccount getCheckingAccount() {
+	
+	public CheckingAccount addCheckingAccount(double openingBalance) {
 		
-		return updatedChecking;
+		double totalBalance = 0;
+		double totalChecking = 0;
+		double totalSaving = 0;
+		double testingAdd = openingBalance;
+		
+		totalChecking = this.getCheckingBalance();
+		totalSaving = this.getSavingsBalance();
+		totalBalance = this.getCheckingBalance();
+		
+		totalBalance = totalChecking + totalSaving + testingAdd;
+		
+		if(totalBalance > 250000) {
+			System.out.println("WARNING! New accounts can not be opened until the combined balances of your current accounts are below $250,000.");
+			return checking[checkingAccountNumber];
+		
+		}
+		else {
+			checking[checkingAccountNumber] = new CheckingAccount(openingBalance);
+			//??????????????????
+			return checking[checkingAccountNumber - 1];
+		}
+	}
+	
+	
+		
+		
+		
+		
+		
+		this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
+	}
+	
+	
+	CheckingAccount addCheckingAccount(CheckingAccount checkingAccount) {
+		//????????????????
+	}
+	
+	
+	public CheckingAccount[] getCheckingAccounts() {
+		
+		return this.checking;
+	}
+	
+	
+	public int getNumberOfCheckingAccounts() {
+		return this.checkingAccountNum;
+	}
+	
+	
+	double getCheckingBalance() {
+		double totalBalance = 0;
+		for(int x=0; x < checkingAccountNumber; x++) {
+			totalBalance = totalBalance + checking[x].getBalance();
+		}
+		return totalBalance;
 	}
 
-//***** SAVINGS ACCOUNT ***** 
 
-		SavingsAccount getSavingsAccount() {
-			
-			return updatedSavings;
-		}
+// ===== SAVINGS ACCOUNT ===== 
+	
+	
+	
+	SavingsAccount addSavingsAccount(double openingBalance) {
+		
+	}
+	
+	
+	SavingsAccount addSavingsAccount(SavingsAccount savingsAccount) {
+		
+		
+	}
+	
+	
+	
+	SavingsAccount getSavingsAccount() {
+		
+		return updatedSavings;
+	}
+	
+	
+	
+	int getNumberOfSavingsAccounts() {
+		
+	}
+	
+	
+	double getSavingsBalance() {
+		
+		
+	}
 
-// OUTPUT
+	
+// ===== CD ACCOUNT ===== 	
+	
+	CDAccount addCDAccount(CDOffering offering, double openingBalance) {
+		
+		
+	}
+	
+	
+	CDAccount addCDAccount(CDAccount cdAccount) {
+		
+		
+	}
+	
+	
+	CDAccount[] getCDAccounts() {
+		
+		
+	}
+	
+	
+	int getNumberOfCDAccounts() {
+		
+		
+	}
+	
+	
+	double getCDBalance() {
+		
+		
+	}
+	
+	
+	double getCombinedBalance() {
+		
+		
+	}
+
+	
+	
+	
+	
+
+
+
+// ***************** OUTPUT *****************
+		
 	public String toString() {
 
 		return ("\n Name: " + firstName + " " + middleName + " " + lastName + 
@@ -120,4 +266,18 @@ public class AccountHolder extends MeritAmericaBankApp {
 	}
 
 }
+
+
+
+
+
+
+
+
+//this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
+//this.savingsAccountOpeningBalance = savingsAccountOpeningBalance; 
+
+//updatedChecking = new CheckingAccount(checkingAccountOpeningBalance);
+
+//updatedSavings = new SavingsAccount(savingsAccountOpeningBalance);
  
