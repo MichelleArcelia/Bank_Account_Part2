@@ -12,8 +12,7 @@ public class CDOffering {
 	int term;
 	double interestRate;
 	
-	CDOffering(){
-	}
+
 	
 	// Constructor
 	CDOffering (int term, double interestRate) {

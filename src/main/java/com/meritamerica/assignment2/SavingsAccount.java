@@ -11,9 +11,9 @@ public class SavingsAccount extends BankAccount {
 
 	// ***************** SAVING ACCOUNT CONSTRUCTOR *****************
 			
-		 SavingsAccount(double openingBalance) {	
-		this.openingBalance = openingBalance; 
-		this.interestRate =0.01;
+		public SavingsAccount(double openingBalance) {	
+			this.openingBalance = openingBalance; 
+			this.interestRate =0.01;
 			
 		}
 			

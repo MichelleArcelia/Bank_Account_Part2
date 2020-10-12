@@ -72,7 +72,31 @@ public class MeritAmericaBankApp {
 			MeritBank.addAccountHolder(ah2);
 			
 			
-		
+// Clear the CD Offerings
+			
+			MeritBank.clearCDOffering();
+			
+			
+// USER 3 
+			
+			AccountHolder ah3 = new AccountHolder("Patches", "the", "Dog", "989-34-8888"); 
+			
+			ah3.addCDAccount(MeritBank.getSecondBestCDOffering(1000), 1000);
+			
+			System.out.println("TESTING " + ah3.getCDAccounts().length);
+			
+			ah3.addCheckingAccount(1000);
+			ah3.addSavingsAccount(10000);
+			
+			MeritBank.addAccountHolder(ah3);
+			
+// TOTAL balance of all accounts held by Merit Bank’s account holders 
+			
+			System.out.println("TOTAL ACCOUNT BALANCES HELD BY MERIT BANK HOLDERS:" + MeritBank.totalBalance());
+			
+			
+			
+			
 		
 	}
 }
