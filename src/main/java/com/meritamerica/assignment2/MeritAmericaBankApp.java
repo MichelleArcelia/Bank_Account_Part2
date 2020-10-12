@@ -33,23 +33,35 @@ public class MeritAmericaBankApp {
 	
 	MeritBank.setCDOfferings(CDOfferings);
 	
-	AccountHolder Holder1 = new AccountHolder("Mare", "the", "cat", "123-45-6789");
+// USER 1	
+	
+	AccountHolder ah1 = new AccountHolder("Mare", "the", "cat", "123-45-6789");
+	
+		ah1.addCheckingAccount(1000);
+		ah1.addSavingsAccount(10000);
+		
+		ah1.addCheckingAccount(5000);
+		ah1.addSavingsAccount(50000);
+		
+		ah1.addCheckingAccount(50000);
+		ah1.addSavingsAccount(500000);
+		
+		ah1.addCheckingAccount(5000);
+		ah1.addSavingsAccount(50000);
+		
+		
+		ah1.addCDAccount(MeritBank.getBestCDOffering(1000), 1000);
+		
+		System.out.println("TESTING - CD TERMS: " + ah1.getCDAccounts()[0].getTerm());
+		
+		MeritBank.addAccountHolder(ah1);
 	
 	
-	
-	
-	
-	
-	
-	System.out.println(Holder1.toString());	
-	
-	//Holder1.updatedSavings.withdraw(20);
-	
-	System.out.println("NEW Savings Information: " + Holder1.updatedSavings.toString());
-	
+// USER 2 
+		
+		
 	
 
-		
 		
 		
 	}
