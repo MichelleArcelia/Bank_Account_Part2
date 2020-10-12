@@ -256,6 +256,7 @@ import java.util.Arrays;
 		
 	}
 	
+//************************************************** PART 2 OF CD ACCOUNT  ************************************************** 
 	
 	public CDAccount addCDAccount(CDAccount cdAccount) {
 		CDAccount[] newCDStorage = new CDAccount[cdAccountStorage.length+1];
@@ -266,18 +267,21 @@ import java.util.Arrays;
 		return cdAccountStorage[cdAccountStorage.length-1] = cdAccount;
 		
 	}
-	
+
+//************************************************** PART 3 OF CD ACCOUNT  ************************************************** 
 	
 	public CDAccount[] getCDAccounts() {
 		return cdAccountStorage;
 		
 	}
 	
+//************************************************** PART 4 OF CD ACCOUNT  ************************************************** 
 	
 	public int getNumberOfCDAccounts() {
 		return cdAccountStorage.length;
 	}
 	
+//************************************************** PART 5 OF CD ACCOUNT  ************************************************** 
 	
 	public double getCDBalance() {
 		double total = 0;
@@ -287,19 +291,23 @@ import java.util.Arrays;
 		return total;
 	}
 	
+//************************************************** PART 6 OF CD ACCOUNT  ************************************************** 	
 	
-	
-	double getCombinedBalance() {
+	public double getCombinedBalance() {
 		return getCDBalance() + getSavingsBalance() + getCheckingBalance();
 		
 	}
 
-	
-	
-	
-	
 }
 
+	
+	
+	
+	
+	
+	
+	
+	
 /* TESTING CODE
 // ***************** OUTPUT *****************
 		
