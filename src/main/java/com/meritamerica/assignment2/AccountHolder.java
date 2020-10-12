@@ -5,30 +5,32 @@
  * PART 2
  */
 
+//==========================================================================================================================
+//======================================================= IMPORTS ==========================================================
+//==========================================================================================================================	
 
 package com.meritamerica.assignment2;
 
 import java.util.Arrays;
 
-//import com.meritamerica.assignment1.CheckingAccount;
-//import com.meritamerica.assignment1.SavingsAccount;
-
-
-public class AccountHolder extends MeritAmericaBankApp {
+//==========================================================================================================================
+//====================================================== VARIABLES =========================================================
+//==========================================================================================================================	
 	
-// ***************** VARIABLES *****************
+	public class AccountHolder {
 	
-	private String firstName;
-	private String middleName;
-	private String lastName;
-	private String ssn;
-	CheckingAccount[] checkingStorage = new CheckingAccount[0];
-	SavingsAccount[] savingsStorage = new SavingsAccount[0];
-	CDAccount [] cdAccountStorage = new CDAccount[0];
-	private double totalBalance;
-	
+		private String firstName;
+		private String middleName;
+		private String lastName;
+		private String ssn;
+		CheckingAccount[] checkingStorage = new CheckingAccount[0];
+		SavingsAccount[] savingsStorage = new SavingsAccount[0];
+		CDAccount [] cdAccountStorage = new CDAccount[0];
+		private double totalBalance;
 
-// ***************** CONSTRUCTOR - ACCOUNT HOLDER DETAILS *****************
+//==========================================================================================================================
+//======================================== CONSTRUCTOR - ACCOUNT HOLDER DETAILS ============================================
+//==========================================================================================================================	
 	
 	public AccountHolder(String firstName, String middleName, String lastName, String ssn) {
 		
@@ -38,8 +40,9 @@ public class AccountHolder extends MeritAmericaBankApp {
 		this.ssn = ssn;
 	} 
 	
-// ***************** GET & SET METHODS *****************
-	
+//==========================================================================================================================
+//==================================================== GET & SET METHODS ===================================================
+//==========================================================================================================================
 	
 // ===== FIRST NAME ===== 
 
@@ -81,21 +84,23 @@ public class AccountHolder extends MeritAmericaBankApp {
 		this.ssn = ssn;
 	}
 
+//==========================================================================================================================
+// ================================================ CHECKING ACCOUNT METHODS ===============================================
+//==========================================================================================================================
 	
+//******************************** PART 1 OF CHECKING - Opening Balance to Checking Account ******************************** 
 	
-// ===== CHECKING ACCOUNT METHODS===== 
 //TOP OF METHOD: checks to see if combined balances are less than 250,000	
 //BOTTOM OF METHOD: ONLY Opening Balance of the checking Account is added to the Account Holder - Adding items to an Array
 	
-	public void addCheckingAccount(double openingBalance) {
+	public CheckingAccount addCheckingAccount(double openingBalance) {
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! New accounts can not be opened until the combined balances of your current accounts are below $250,000.");
-		return;
+		
 	}
-	
 		
 		CheckingAccount newX = new CheckingAccount(openingBalance);
 		CheckingAccount[] newCheckingStorage = new CheckingAccount[checkingStorage.length+1];
@@ -103,71 +108,57 @@ public class AccountHolder extends MeritAmericaBankApp {
 				newCheckingStorage[i] = checkingStorage[i];
 			}
 			checkingStorage = newCheckingStorage;
-			checkingStorage[checkingStorage.length-1] = newX;
+			return checkingStorage[checkingStorage.length-1] = newX;
 	}
 	
+// ***************************** PART 2 OF CHECKING - Adding Amount (not opening balance) to Checking Account *************** 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+//TOP OF METHOD: checks to see if combined balances are less than 250,000	
+//BOTTOM OF METHOD: ONLY Opening Balance of the checking Account is added to the Account Holder - Adding items to an Array
 		
-		double totalBalance = 0;
-		double totalChecking = 0;
-		double totalSaving = 0;
-		double testingAdd = openingBalance;
+		public CheckingAccount addCheckingAccount(CheckingAccount checkingAccount) {
+			
+			totalBalance = checkingAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
+			
+			if(totalBalance > 250000) {
+				System.out.println("WARNING! New accounts can not be opened until the combined balances of your current accounts are below $250,000.");
+			
+		}
 		
-		totalChecking = this.getCheckingBalance();
-		totalSaving = this.getSavingsBalance();
-		totalBalance = this.getCheckingBalance();
-		
-		totalBalance = totalChecking + totalSaving + testingAdd;
-		
-		if(totalBalance > 250000) {
-			System.out.println("WARNING! New accounts can not be opened until the combined balances of your current accounts are below $250,000.");
-
+			CheckingAccount newCheckingStorage = new CheckingAccount(checkingStorage.length+1);
+			
+				for(int i = 0; i < newCheckingStorage.length-1; i++) {
+					newCheckingStorage[i] = checkingStorage[i];
+				}
+				checkingStorage = newCheckingStorage;
+				return checkingStorage[checkingStorage.length-1] = checkingAccount;
+		}
 	
-	
-		
-		
-		
-		
-		
-		this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
-	}
-	
-	
-	CheckingAccount addCheckingAccount(CheckingAccount checkingAccount) {
-		//????????????????
-	}
-	
+// ************************************* PART 3 OF CHECKING: Returns the Checking Account *************************************  	
 	
 	public CheckingAccount[] getCheckingAccounts() {
-		
-		return this.checking;
+		return checkingStorage;
 	}
 	
+// *************************** PART 4 OF CHECKING: Will return the total number of Checking Accounts ************************** 	
 	
 	public int getNumberOfCheckingAccounts() {
-		return this.checkingAccountNum;
+		return checkingStorage.length;
 	}
 	
+// **************************** PART 5 OF CHECKING: Add up the total balance of the checking accounts ************************* 	
 	
 	double getCheckingBalance() {
 		double totalBalance = 0;
-		for(int x=0; x < checkingAccountNumber; x++) {
-			totalBalance = totalBalance + checking[x].getBalance();
+		for(int i = 0; i < checkingStorage.length; i++) {
+			totalBalance = totalBalance + checkingStorage[i].getBalance();
 		}
 		return totalBalance;
 	}
 
-
-// ===== SAVINGS ACCOUNT ===== 
+//==========================================================================================================================
+// ================================================ SAVINGS ACCOUNT METHODS ================================================
+//==========================================================================================================================
 	
 	
 	
@@ -242,9 +233,9 @@ public class AccountHolder extends MeritAmericaBankApp {
 	
 	
 	
+}
 
-
-
+/*
 // ***************** OUTPUT *****************
 		
 	public String toString() {
@@ -301,4 +292,37 @@ updatedSavings = new SavingsAccount(savingsAccountOpeningBalance);
 //updatedChecking = new CheckingAccount(checkingAccountOpeningBalance);
 
 //updatedSavings = new SavingsAccount(savingsAccountOpeningBalance);
+
+
+
+
+
+
+
+/*
+
+
+double totalBalance = 0;
+double totalChecking = 0;
+double totalSaving = 0;
+double testingAdd = openingBalance;
+
+totalChecking = this.getCheckingBalance();
+totalSaving = this.getSavingsBalance();
+totalBalance = this.getCheckingBalance();
+
+totalBalance = totalChecking + totalSaving + testingAdd;
+
+if(totalBalance > 250000) {
+	System.out.println("WARNING! New accounts can not be opened until the combined balances of your current accounts are below $250,000.");
+
+
+
+
+
+
+
+
+this.checkingAccountOpeningBalance = checkingAccountOpeningBalance;
+}*/
  
