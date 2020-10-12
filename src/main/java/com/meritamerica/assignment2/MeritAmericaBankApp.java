@@ -74,7 +74,7 @@ public class MeritAmericaBankApp {
 			
 // Clear the CD Offerings
 			
-			MeritBank.clearCDOffering();
+			MeritBank.clearCDOfferings();
 			
 			
 // USER 3 

@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class MeritBank {
 	
-	private static AccountHolder[] accounts = new AccountHolder [1];
+	private static AccountHolder[] accounts = new AccountHolder [0];
 	private static AccountHolder accountHolder;
 	private static CDOffering[] cdofferings;
 	private static CDOffering bestCDOffering;
@@ -79,7 +79,7 @@ public class MeritBank {
 		
 	}
 	
-	static void clearCDOffering() {
+	static void clearCDOfferings() {
 		cdofferings = null;
 		
 	}

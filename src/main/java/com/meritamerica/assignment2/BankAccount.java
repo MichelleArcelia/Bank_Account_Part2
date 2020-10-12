@@ -1,6 +1,6 @@
 package com.meritamerica.assignment2;
 
-public class BankAccount extends MeritAmericaBankApp {
+public class BankAccount {
 
 	/* Week 3 Partner Pair Assignment #2
 	 * Bank Account Part 2  
@@ -86,8 +86,21 @@ public class BankAccount extends MeritAmericaBankApp {
 		return FV;
 
 	}
+}
 
 
-
-
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -34,7 +34,6 @@ public class CDAccount extends BankAccount {
 	public double getinterestRate() {
 		return this.interestRate;
 		
-		
 	}
 	
 	public int getTerm() {

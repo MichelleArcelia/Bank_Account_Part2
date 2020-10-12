@@ -93,13 +93,13 @@ import java.util.Arrays;
 //TOP OF METHOD: checks to see if combined balances are less than 250,000	
 //BOTTOM OF METHOD: ONLY Opening Balance of the checking Account is added to the Account Holder - Adding items to an Array
 	
-	public CheckingAccount addCheckingAccount(double openingBalance) {
+	public void addCheckingAccount(double openingBalance) {
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Checking account can not be opened until the combined balances of your current accounts are below $250,000.");
-		
+		return;
 	}
 		
 		CheckingAccount newX = new CheckingAccount(openingBalance);
@@ -108,7 +108,7 @@ import java.util.Arrays;
 				newCheckingStorage[i] = checkingStorage[i];
 			}
 			checkingStorage = newCheckingStorage;
-			return checkingStorage[checkingStorage.length-1] = newX;
+			checkingStorage[checkingStorage.length-1] = newX;
 	}
 	
 // ***************************** PART 2 OF CHECKING - Adding Amount (not opening balance) to Checking Account *************** 
@@ -116,22 +116,22 @@ import java.util.Arrays;
 //TOP OF METHOD: checks to see if combined balances are less than 250,000	
 //BOTTOM OF METHOD: ONLY Opening Balance of the checking Account is added to the Account Holder - Adding items to an Array
 		
-		public CheckingAccount addCheckingAccount(CheckingAccount checkingAccount) {
+		public void addCheckingAccount(CheckingAccount checkingAccount) {
 			
 			totalBalance = checkingAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
 			
 			if(totalBalance > 250000) {
 				System.out.println("WARNING! A new Checking account can not be opened until the combined balances of your current accounts are below $250,000.");
-			
+			return;
 		}
 		
-			CheckingAccount newCheckingStorage = new CheckingAccount(checkingStorage.length+1);
+			CheckingAccount[] newCheckingStorage = new CheckingAccount[checkingStorage.length+1];
 			
 				for(int i = 0; i < newCheckingStorage.length-1; i++) {
 					newCheckingStorage[i] = checkingStorage[i];
 				}
 				checkingStorage = newCheckingStorage;
-				return checkingStorage[checkingStorage.length-1] = checkingAccount;
+				checkingStorage[checkingStorage.length-1] = checkingAccount;
 		}
 	
 // ************************************* PART 3 OF CHECKING: Returns the Checking Account *************************************  	
@@ -168,13 +168,13 @@ import java.util.Arrays;
 //TOP OF METHOD: checks to see if combined balances are less than 250,000	
 //BOTTOM OF METHOD: ONLY Opening Balance of the savings Account is added to the Account Holder - Adding items to an Array
 	
-	public SavingsAccount addSavingsAccount(double openingBalance) {
+	public void addSavingsAccount(double openingBalance) {
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Savings account can not be opened until the combined balances of your current accounts are below $250,000.");
-		
+		return;
 	}
 		
 		SavingsAccount newX = new SavingsAccount(openingBalance);
@@ -183,7 +183,7 @@ import java.util.Arrays;
 				newSavingsStorage[i] = savingsStorage[i];
 			}
 			savingsStorage = newSavingsStorage;
-			return savingsStorage[savingsStorage.length-1] = newX;
+			savingsStorage[savingsStorage.length-1] = newX;
 	}
 	
 // ***************************** PART 2 OF SAVINGS - Adding Amount (not opening balance) to Savings Account *************** 
@@ -191,27 +191,27 @@ import java.util.Arrays;
 //TOP OF METHOD: checks to see if combined balances are less than 250,000	
 //BOTTOM OF METHOD: ONLY Opening Balance of the savings Account is added to the Account Holder - Adding items to an Array
 			
-		public SavingsAccount addSavingsAccount(SavingsAccount savingsAccount) {
+		public void addSavingsAccount(SavingsAccount savingsAccount) {
 				
 			totalBalance = savingsAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
 				
 			if(totalBalance > 250000) {
 				System.out.println("WARNING! A new Savings account can not be opened until the combined balances of your current accounts are below $250,000.");
-				
+				return;
 			}
 			
-			SavingsAccount newSavingsStorage = new SavingsAccount(savingsStorage.length+1);
+			SavingsAccount[] newSavingsStorage = new SavingsAccount[savingsStorage.length+1];
 				
 				for(int i = 0; i < newSavingsStorage.length-1; i++) {
 					newSavingsStorage[i] = savingsStorage[i];
 				}
-				checkingStorage = newSavingsStorage;
-				return savingsStorage[savingsStorage.length-1] = SavingsAccount;
+				savingsStorage = newSavingsStorage;
+				savingsStorage[savingsStorage.length-1] = savingsAccount;
 		}	
 	
 // ************************************* PART 3 OF SAVINGS: Returns the Savings Account ***************************************  	
 	
-		public SavingsAccount[] getSavingsAccount() {
+		public SavingsAccount[] getSavingsAccounts() {
 			System.out.println("TESTING - SAVINGS ACCOUNT IS" + savingsStorage);
 			return savingsStorage;
 		}
