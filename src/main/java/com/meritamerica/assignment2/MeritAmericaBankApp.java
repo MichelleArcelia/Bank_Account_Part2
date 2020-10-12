@@ -59,8 +59,10 @@ public class MeritAmericaBankApp {
 	
 // USER 2 
 		
+		AccountHolder ah2 = new AccountHolder("Luna", "the", "cat", "122-33-5555");
 		
-	
+			ah2.addCheckingAccount(1000);
+			ah2.addSavingsAccount(10000);
 
 		
 		
