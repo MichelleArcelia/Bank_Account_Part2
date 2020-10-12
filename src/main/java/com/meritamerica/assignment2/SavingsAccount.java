@@ -6,7 +6,7 @@ public class SavingsAccount extends BankAccount {
 		public double interestRate;
 		public double openingBalance;
 		public double futureValue;
-		
+		private long accountNumber;
 			
 
 	// ***************** SAVING ACCOUNT CONSTRUCTOR *****************
@@ -14,6 +14,7 @@ public class SavingsAccount extends BankAccount {
 		public SavingsAccount(double openingBalance) {	
 			this.openingBalance = openingBalance; 
 			this.interestRate =0.01;
+			this.accountNumber = MeritBank.getNextAccountNUmber();
 			
 		}
 			
