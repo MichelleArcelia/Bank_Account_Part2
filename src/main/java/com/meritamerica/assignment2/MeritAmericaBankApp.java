@@ -63,7 +63,15 @@ public class MeritAmericaBankApp {
 		
 			ah2.addCheckingAccount(1000);
 			ah2.addSavingsAccount(10000);
-
+			
+			ah2.addCDAccount(MeritBank.getSecondBestCDOffering(1000), 1000);
+			
+			
+			System.out.println("TESTING - CD TERMS: " + ah2.getCDAccounts()[0].getTerm());
+			
+			MeritBank.addAccountHolder(ah2);
+			
+			
 		
 		
 	}
