@@ -31,7 +31,7 @@ public class MeritAmericaBankApp {
 		CDOffering[4] = new CDOffering(10, .022);
 	
 	
-	MeritBank.setCDOfferings(CDOfferings);
+	MeritBank.setCDOfferings(CDOffering);
 	
 // USER 1	
 	
