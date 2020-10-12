@@ -7,6 +7,38 @@ package com.meritamerica.assignment2;
  * PART 2
  */
 public class CheckingAccount extends BankAccount {
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	
+	
 
 	// iINSTANCE VARIABLES
 		public double interestRate;
@@ -85,3 +117,4 @@ public class CheckingAccount extends BankAccount {
 	}
 		
 
+*/
