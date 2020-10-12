@@ -238,20 +238,19 @@ import java.util.Arrays;
 	
 	
 	
+//==========================================================================================================================
+// ======================================================== CD ACCOUNT =====================================================
+//==========================================================================================================================	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-// ===== CD ACCOUNT ===== 	
-	
-	CDAccount addCDAccount(CDOffering offering, double openingBalance) {
-		
+	public CDAccount addCDAccount(CDOffering offering, double openingBalance) {
+		CDAccount newX = new CDAccount(offering, openingBalance);
+		CDAccount[] newCDStorage = new CDAccount[cdAccountStorage.length + 1];
+		for(int i = 0; i < newCDArray.length-1; i++) {
+			newCDStorage[i] = cdAccountStorage[i];
+			
+		}
+		cdAccountStorage = newCDStorage;
+		cdAccountStorage[cdAccountStorage.length-1] = newX;
 		
 	}
 	
