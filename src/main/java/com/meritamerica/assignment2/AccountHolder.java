@@ -97,9 +97,12 @@ import java.util.Arrays;
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
+		System.out.println("TEST RUN:" + totalBalance);
+		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Checking account can not be opened until the combined balances of your current accounts are below $250,000.");
 		return;
+		
 	}
 		
 		CheckingAccount newX = new CheckingAccount(openingBalance);
@@ -119,6 +122,9 @@ import java.util.Arrays;
 		public void addCheckingAccount(CheckingAccount checkingAccount) {
 			
 			totalBalance = checkingAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
+			
+			System.out.println("TEST RUN:" + totalBalance);
+			
 			
 			if(totalBalance > 250000) {
 				System.out.println("WARNING! A new Checking account can not be opened until the combined balances of your current accounts are below $250,000.");
@@ -144,7 +150,7 @@ import java.util.Arrays;
 // *************************** PART 4 OF CHECKING: Will return the total number of Checking Accounts ************************** 	
 	
 	public int getNumberOfCheckingAccounts() {
-		System.out.println("TESTING - Total Number of CHECKING Accounts:" + checkingStorage.length);
+		//System.out.println("TESTING - Total Number of CHECKING Accounts:" + checkingStorage.length);
 		return checkingStorage.length;
 	}
 	
@@ -172,6 +178,8 @@ import java.util.Arrays;
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
+		System.out.println("TEST RUN:" + totalBalance);
+		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Savings account can not be opened until the combined balances of your current accounts are below $250,000.");
 		return;
@@ -192,6 +200,8 @@ import java.util.Arrays;
 //BOTTOM OF METHOD: ONLY Opening Balance of the savings Account is added to the Account Holder - Adding items to an Array
 			
 		public void addSavingsAccount(SavingsAccount savingsAccount) {
+			
+			System.out.println("TEST RUN:" + totalBalance);
 				
 			totalBalance = savingsAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
 				
@@ -219,7 +229,7 @@ import java.util.Arrays;
 // *************************** PART 4 OF SAVINGS: Will return the total number of savings Accounts *********************** 	
 		
 		public int getNumberOfSavingsAccounts() {
-			System.out.println("TESTING - Total Number of Savings Accounts:" + savingsStorage.length);
+			//System.out.println("TESTING - Total Number of Savings Accounts:" + savingsStorage.length);
 			return savingsStorage.length;
 		}
 		
@@ -230,7 +240,7 @@ import java.util.Arrays;
 			for(int i = 0; i < savingsStorage.length; i++) {
 				totalBalance = totalBalance + savingsStorage[i].getBalance();
 			}
-			System.out.println("TESTING - TOTAL BALAANCE OF SAVINGS ACCOUNTS" + totalBalance);
+			//System.out.println("TESTING - TOTAL BALAANCE OF SAVINGS ACCOUNTS" + totalBalance);
 			return totalBalance;
 		}
 	

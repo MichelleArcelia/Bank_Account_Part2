@@ -19,13 +19,12 @@ public class BankAccount {
 	//Constructs a Bank Account 
 		  
 	public BankAccount(double balance, double interestRate){
-		this.bankAccount = balance;
+		this.balance = balance;
 		this.interestRate = interestRate;
+		this.accountNumber = MeritBank.getNextAccountNUmber();
 	}
 		
-	public BankAccount(double balance) {
-		this.bankAccount = balance;
-	}
+
 		
 		   
 	

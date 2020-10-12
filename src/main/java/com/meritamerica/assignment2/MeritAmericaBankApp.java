@@ -93,11 +93,7 @@ public class MeritAmericaBankApp {
 // TOTAL balance of all accounts held by Merit Bank’s account holders 
 			
 			System.out.println("TOTAL ACCOUNT BALANCES HELD BY MERIT BANK HOLDERS:" + MeritBank.totalBalance());
-			
-			
-			
-			
-		
+				
 	}
 }
 
