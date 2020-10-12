@@ -235,53 +235,62 @@ import java.util.Arrays;
 		}
 	
 	
+//==========================================================================================================================
+// =================================================== CD ACCOUNT METHODS ==================================================
+//==========================================================================================================================
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-// ===== CD ACCOUNT ===== 	
-	
-	CDAccount addCDAccount(CDOffering offering, double openingBalance) {
 		
 		
-	}
+//*********************************************** PART 1 OF CD - CD Opening Balance  **************************************** 
+// ONLY Offering & Opening Balance - Adding items to an Array
+
 	
-	
-	CDAccount addCDAccount(CDAccount cdAccount) {
-		
+	public CDAccount addCDAccount(CDOffering offering, double openingBalance) {
+		CDAccount newX = new CDAccount(offering, openingBalance);
+		CDAccount[] newCDStorage = new CDAccount[cdAccountStorage.length+1];
+		for (int i = 0; i < newCDStorage.length-1; i++) {
+			newCDStorage[i] = cdAccountStorage[i];
+		}
+		cdAccountStorage = newCDStorage;
+		return cdAccountStorage[cdAccountStorage.length-1] = newX;
 		
 	}
 	
 	
-	CDAccount[] getCDAccounts() {
+	public CDAccount addCDAccount(CDAccount cdAccount) {
+		CDAccount[] newCDStorage = new CDAccount[cdAccountStorage.length+1];
+		for (int i =0; i < newCDStorage.length-1; i++) {
+			newCDStorage[i] = cdAccountStorage[i];
+		}
+		cdAccountStorage = newCDStorage;
+		return cdAccountStorage[cdAccountStorage.length-1] = cdAccount;
 		
+	}
+	
+	
+	public CDAccount[] getCDAccounts() {
+		return cdAccountStorage;
 		
 	}
 	
 	
-	int getNumberOfCDAccounts() {
-		
-		
+	public int getNumberOfCDAccounts() {
+		return cdAccountStorage.length;
 	}
 	
 	
-	double getCDBalance() {
-		
-		
+	public double getCDBalance() {
+		double total = 0;
+		for(CDAccount balance : cdAccountStorage) {
+			total = total + balance.getBalance();
+		}
+		return total;
 	}
+	
 	
 	
 	double getCombinedBalance() {
-		
+		return getCDBalance() + getSavingsBalance() + getCheckingBalance();
 		
 	}
 
@@ -291,7 +300,7 @@ import java.util.Arrays;
 	
 }
 
-/*
+/* TESTING CODE
 // ***************** OUTPUT *****************
 		
 	public String toString() {
