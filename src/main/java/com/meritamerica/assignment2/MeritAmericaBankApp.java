@@ -23,7 +23,7 @@ public class MeritAmericaBankApp {
 
 //Set CD Offerings
 	
-	CDOffering[] CDOfferings = new CDOffering[5];
+	CDOffering[] CDOffering = new CDOffering[5];
 		CDOffering[0] = new CDOffering(1, .018);
 		CDOffering[1] = new CDOffering(2, .019);
 		CDOffering[2] = new CDOffering(3, .020);
