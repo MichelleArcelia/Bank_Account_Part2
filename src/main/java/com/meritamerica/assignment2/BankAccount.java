@@ -21,11 +21,14 @@ public class BankAccount extends MeritAmericaBankApp {
 	public BankAccount(double balance, double interestRate){
 		this.bankAccount = balance;
 		this.interestRate = interestRate;
+	}
 		
-		
+	public BankAccount(double balance) {
+		this.bankAccount = balance;
+	}
 		
 		   
-	}
+	
 	public BankAccount(long accountNumber, double balance, double interestRate){
 		this.accountNumber = accountNumber;
 		this.balance = balance;
