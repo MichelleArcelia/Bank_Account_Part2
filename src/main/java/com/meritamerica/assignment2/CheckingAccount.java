@@ -9,7 +9,11 @@ package com.meritamerica.assignment2;
 public class CheckingAccount extends BankAccount {
 	
 	
+    //CONSTRUCTOR OF OBJECTS CLASS CHECKING
 	
+	public CheckingAccount(double openingBalance) {
+		super(openingBalance);
+	}
 	
 	
 	
