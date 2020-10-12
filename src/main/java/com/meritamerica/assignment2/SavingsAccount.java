@@ -2,6 +2,40 @@ package com.meritamerica.assignment2;
 
 public class SavingsAccount extends BankAccount {
 	
+
+	
+	// ***************** SAVING ACCOUNT CONSTRUCTOR *****************
+	
+	public SavingsAccount(double openingBalance) {	
+		super(openingBalance);
+		
+	}
+	
+}
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	
+	
+	
 	// ***************** VARIABLES ***************** 
 		public double interestRate;
 		public double openingBalance;
@@ -83,4 +117,4 @@ public class SavingsAccount extends BankAccount {
 
 		}
 	}
-			
+	*/		
