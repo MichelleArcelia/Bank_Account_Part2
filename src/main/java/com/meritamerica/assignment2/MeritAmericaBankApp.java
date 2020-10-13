@@ -16,10 +16,7 @@ public class MeritAmericaBankApp {
 		
       
 		        
-	System.out.println("******************************************");
-	System.out.println("   Welcome to Merit America Bank App Version 2!");
-	System.out.println("    Your account details are below:");
-	System.out.println("******************************************");
+
 
 //Set CD Offerings
 	
@@ -35,31 +32,56 @@ public class MeritAmericaBankApp {
 	
 // USER 1	
 	
-	AccountHolder ah1 = new AccountHolder("Mare", "the", "cat", "123-45-6789");
 	
+	
+	
+	
+	
+	System.out.println("******************************************");
+	System.out.println("   Welcome to Merit America Bank App Version 2!");
+	System.out.println("    Your account details are below:");
+	System.out.println("******************************************");
+	
+	
+	AccountHolder ah1 = new AccountHolder("Mare", "the", "Cat", "123-45-6789");
+	
+		System.out.println("");
+		System.out.println("======= ACCOUNT HOLDER: " + ah1.getFirstName() + " " + ah1.getLastName()  + " ======= ");
+		System.out.println("");
+		
 		ah1.addCheckingAccount(1000);
 		ah1.addSavingsAccount(10000);
+		System.out.println("");
 		
 		ah1.addCheckingAccount(5000);
 		ah1.addSavingsAccount(50000);
+		System.out.println("");
 		
 		ah1.addCheckingAccount(50000);
 		ah1.addSavingsAccount(500000);
+		System.out.println("");
 		
 		ah1.addCheckingAccount(5000);
 		ah1.addSavingsAccount(50000);
-		
+		System.out.println("");
 		
 		ah1.addCDAccount(MeritBank.getBestCDOffering(1000), 1000);
 		
-		System.out.println("TESTING - CD TERMS: " + ah1.getCDAccounts()[0].getTerm());
+		
+		
+		System.out.println("CD TERM: " + ah1.getCDAccounts()[0].getTerm());
 		
 		MeritBank.addAccountHolder(ah1);
 	
 	
 // USER 2 
 		
-		AccountHolder ah2 = new AccountHolder("Luna", "the", "cat", "122-33-5555");
+		AccountHolder ah2 = new AccountHolder("Luna", "the", "Cat", "122-33-5555");
+		
+		System.out.println("");
+		System.out.println("======= ACCOUNT HOLDER: " + ah2.getFirstName() + " " + ah2.getLastName() + " ======= ");
+		System.out.println("");
+		
 		
 			ah2.addCheckingAccount(1000);
 			ah2.addSavingsAccount(10000);
@@ -67,7 +89,7 @@ public class MeritAmericaBankApp {
 			ah2.addCDAccount(MeritBank.getSecondBestCDOffering(1000), 1000);
 			
 			
-			System.out.println("TESTING - CD TERMS: " + ah2.getCDAccounts()[0].getTerm());
+			System.out.println("CD TERMS: " + ah2.getCDAccounts()[0].getTerm());
 			
 			MeritBank.addAccountHolder(ah2);
 			
@@ -80,6 +102,12 @@ public class MeritAmericaBankApp {
 // USER 3 
 			
 			AccountHolder ah3 = new AccountHolder("Patches", "the", "Dog", "989-34-8888"); 
+			
+			
+			
+			System.out.println("");
+			System.out.println("======= ACCOUNT HOLDER: " + ah3.getFirstName() + " " + ah3.getLastName() + " ======= ");
+			System.out.println("");
 			
 			ah3.addCDAccount(MeritBank.getSecondBestCDOffering(1000), 1000);
 			

@@ -97,7 +97,7 @@ import java.util.Arrays;
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
-		System.out.println("TEST RUN:" + totalBalance);
+		System.out.println("Checking Total Balance:" + totalBalance);
 		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Checking account can not be opened until the combined balances of your current accounts are below $250,000.");
@@ -123,7 +123,7 @@ import java.util.Arrays;
 			
 			totalBalance = checkingAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
 			
-			System.out.println("TEST RUN:" + totalBalance);
+			System.out.println("Checking Total Balance:" + totalBalance);
 			
 			
 			if(totalBalance > 250000) {
@@ -143,7 +143,7 @@ import java.util.Arrays;
 // ************************************* PART 3 OF CHECKING: Returns the Checking Account *************************************  	
 	
 	public CheckingAccount[] getCheckingAccounts() {
-		System.out.println("TESTING - CHECKING ACCOUNT IS" + checkingStorage);
+		//System.out.println("TESTING - CHECKING ACCOUNT IS" + checkingStorage);
 		return checkingStorage;
 	}
 	
@@ -161,7 +161,7 @@ import java.util.Arrays;
 		for(int i = 0; i < checkingStorage.length; i++) {
 			totalBalance = totalBalance + checkingStorage[i].getBalance();
 		}
-		System.out.println("TESTING - TOTAL BALANCE OF CHECKING ACCOUNTS" + totalBalance);
+		//System.out.println("TESTING - TOTAL BALANCE OF CHECKING ACCOUNTS" + totalBalance);
 		return totalBalance;
 	}
 
@@ -178,7 +178,7 @@ import java.util.Arrays;
 		
 		totalBalance = getCheckingBalance() + getSavingsBalance() + openingBalance;
 		
-		System.out.println("TEST RUN:" + totalBalance);
+		System.out.println("Savings Total Balance:" + totalBalance);
 		
 		if(totalBalance > 250000) {
 			System.out.println("WARNING! A new Savings account can not be opened until the combined balances of your current accounts are below $250,000.");
@@ -201,7 +201,7 @@ import java.util.Arrays;
 			
 		public void addSavingsAccount(SavingsAccount savingsAccount) {
 			
-			System.out.println("TEST RUN:" + totalBalance);
+			System.out.println("SAVINGS ACCOUNT BALANCE:" + totalBalance);
 				
 			totalBalance = savingsAccount.getBalance() + getCheckingBalance() + getSavingsBalance();
 				
@@ -222,7 +222,7 @@ import java.util.Arrays;
 // ************************************* PART 3 OF SAVINGS: Returns the Savings Account ***************************************  	
 	
 		public SavingsAccount[] getSavingsAccounts() {
-			System.out.println("TESTING - SAVINGS ACCOUNT IS" + savingsStorage);
+			//System.out.println("TESTING - SAVINGS ACCOUNT IS" + savingsStorage);
 			return savingsStorage;
 		}
 		
